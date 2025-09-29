@@ -1,5 +1,11 @@
+const genrateRandomText = require("../helpers/genrateRandomText")
+
 const getUrl_controller = (req , res)=>{
-    res.send('This is my controller')
+
+    const {longUrl} = req.body
+    const randomText = genrateRandomText()
+    console.log(randomText)
+    res.send(req.body)
 }
 
 

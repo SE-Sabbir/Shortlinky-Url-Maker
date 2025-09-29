@@ -6,7 +6,7 @@ const route = require('./src/routes/routes')
 
 // --------------middle ware-----------
 app.use(express.json())
-app.use(cors)
+app.use(cors())
 app.use(route)
 // --------------run port
 app.listen( port , (err)=>{
