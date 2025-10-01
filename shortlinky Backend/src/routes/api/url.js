@@ -3,7 +3,7 @@ const { getUrl_controller } = require('../../controllers/getUrl')
 const runUrl = require('../../controllers/runUrl')
 const urlApi = express.Router()
 
-urlApi.post('/sendlongurl' , getUrl_controller)
+urlApi.post('/sendLongUrl' , getUrl_controller)
 urlApi.get('/:shortId' , runUrl)
 
 

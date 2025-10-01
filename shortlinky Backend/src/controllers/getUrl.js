@@ -4,13 +4,17 @@ const urlModel = require("../models/urlModel")
 
 const getUrl_controller = async (req , res)=>{
 
-    const {longUrl} = req.body
-    const randomText = genrateRandomText()
-    
-    await new urlModel({longUrl , shortCode: randomText}).save()
-    
-    console.log(randomText)
-    res.status(200).send(`localhost:8000/url/${randomText}`)
+    try{
+        const {longUrl} = req.body
+        const randomText = genrateRandomText()
+        
+        await new urlModel({longUrl , shortCode: randomText}).save()
+        
+        res.status(200).send({longUrl:longUrl , shortUrl:`http://localhost:8000/url/${randomText}`})
+    }
+    catch(err){
+        res.status(501).send({message:'internal server error' , error:err})
+    }
 }
 
 

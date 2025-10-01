@@ -6,8 +6,8 @@ const route = require('./src/routes/routes')
 const { default: mongoose } = require('mongoose')
 
 // --------------middle ware-----------
-app.use(express.json())
 app.use(cors())
+app.use(express.json())
 app.use(route)
 // --------------db connection----------
 mongoose.connect('mongodb+srv://testproject2404:222156hp@cluster0.qlehpzv.mongodb.net/testproject2404?retryWrites=true&w=majority&appName=Cluster0')
